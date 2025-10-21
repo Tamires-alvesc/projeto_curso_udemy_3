@@ -12,3 +12,6 @@ class ArtigoModel(settings.DBBaseModel):
     url_fonte: str = Column(String(256))
     usuario_id: int = Column(Integer, ForeignKey("usuarios.id"))
     criador = relationship("UsuarioModel", back_populates="artigos",lazy="joined")
+
+
+    

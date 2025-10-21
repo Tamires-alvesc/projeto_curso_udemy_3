@@ -1,13 +1,13 @@
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 from sqlalchemy.ext.declarative import declarative_base
-from typing import List
+from typing import List, ClassVar
 
 class Settings(BaseSettings):
     """
     Configurações gerais usadas na aplicação"""
     API_V1_STR: str = '/api/v1'
-    DB_URL: str = 'postgresql+asyncpg://user_user:password_password@93.188.162.196:5234/faculdade'  #Como fazer usuário e senha do banco de dados ? e como fazer o banco de dados com pgadmin4?
-    DBBaseModel = declarative_base()
+    DB_URL: str = 'postgresql+asyncpg://user_user:password_password@93.188.162.196:5234/faculdade'  #Como fazer usuário e senha do banco de dados ? e como fazer o banco de dados com pgladmin4?
+    DBBaseModel: ClassVar = declarative_base()
 
     JWT_SECRET: str = 'yaPVNM4dRdRQ6Sif1CuDF12KW7f7Lx5jCBloBTDoUOg'
 
